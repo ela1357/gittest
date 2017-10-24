@@ -39,9 +39,11 @@ def kw_c(cur):
 
 def kw_d(cur):
     cur.execute("""
-        SELECT Imie, Nazwisko, tbOceny.Ocena
-        FROM tbUczniowie, tbOceny
-        WHERE 
+        SELECT Imie, Nazwisko, tbOceny.Ocena, tbPrzedmioty.Przedmiot
+        FROM tbUczniowie, tbOceny, tbPrzedmioty
+        WHERE tbOceny.UczenID = tbUczniowie.IDUcznia
+        AND tbOceny.PrzedmiotID = tbPrzedmioty.IDPrzedmiotu
+        AND Nazwisko LIKE 'Nowak'
     """)
 
     wyniki = cur.fetchall()
@@ -51,7 +53,11 @@ def kw_d(cur):
         
 def kw_e(cur):
     cur.execute("""
-        SELECT
+        SELECT AVG(Ocena), Przedmiot, Datad
+        FROM tbPrzedmioty, tbOceny
+        WHERE tbOceny.PrzedmiotID = tbPrzedmioty.IDPrzedmiotu
+        AND Przedmiot LIKE 'fizyka'
+        AND strftime('%m', Datad) LIKE '10'
     """)
     
     wyniki = cur.fetchall()
@@ -66,8 +72,8 @@ def main(args):
     # kw_a(cur)
     # kw_b(cur)
     # kw_c(cur)
-    kw_d(cur)
-    # KW_d(cur)
+    # kw_d(cur)
+    kw_e(cur)
     
     return 0
 
