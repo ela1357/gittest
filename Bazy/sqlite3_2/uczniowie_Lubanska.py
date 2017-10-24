@@ -30,7 +30,9 @@ def kw_b(cur):
 def kw_c(cur):
     cur.execute("""
         SELECT AVG(EgzMat)
-        FROM tbUczniowie
+        FROM tbUczniowie, tbKlasy
+        WHERE tbUczniowie.KlasaID = tbKlasy.IDKlasy
+        AND Klasa LIKE '1A'
     """)
     
     wyniki = cur.fetchall()
@@ -71,9 +73,9 @@ def main(args):
     
     # kw_a(cur)
     # kw_b(cur)
-    # kw_c(cur)
+    kw_c(cur)
     # kw_d(cur)
-    kw_e(cur)
+    # kw_e(cur)
     
     return 0
 
