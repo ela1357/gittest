@@ -29,7 +29,7 @@ def kw_b(cur):
     
 def kw_c(cur):
     cur.execute("""
-        SELECT AVG(EgzMat)
+        SELECT AVG(EgzMat), tbKlasy.Klasa
         FROM tbUczniowie, tbKlasy
         WHERE tbUczniowie.KlasaID = tbKlasy.IDKlasy
         AND Klasa LIKE '1A'
