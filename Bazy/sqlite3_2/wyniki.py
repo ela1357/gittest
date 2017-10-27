@@ -42,7 +42,7 @@ def main(args):
     aktualizuj2(cur)
     # usun(cur)
     con.commit()
-    wyniki(cur.execute('SELECT EgzJez FROM tbUczniowie'))
+    wyniki(cur.execute('SELECT EgzJez FROM tbUczniowie WHERE Nazwisko AND Imie'))
     
     return 0
 
