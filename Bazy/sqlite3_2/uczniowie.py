@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 #
 #  zapytania.py
+
 import sqlite3
 
 def wyniki(cur):
     wyniki = cur.fetchall()
     for row in wyniki:
         print(tuple(row))
-        
+
 def dodaj(cur):
     cur.execute("""
         INSERT INTO tbKlasy
@@ -16,33 +17,34 @@ def dodaj(cur):
     """, [None, '3C', 2015, 2018])
     
 def aktualizuj(cur):
-    cur.execute("""
+    cur.execute(""" 
         UPDATE tbKlasy
         SET klasa = ?
         WHERE idklasy = ?
     """, ['3D', 13])
     
-def usun(cur):
-    cur.execute('DELETE FROM tbKlasy WHERE klasa = ? AND roknaboru = ?', ['3B', 2015])
-    
 def aktualizuj2(cur):
-    cur.execute("""
+    cur.execute(""" 
         UPDATE tbUczniowie
         SET EgzJez = ?
-        WHERE Nazwisko = 'Dziedzic'
-        AND Imie = 'Paulina'
+        WHERE Imie LIKE 'Paulina'
+        AND Nazwisko LIKE 'Dziedzic'
     """, [35])
+    
+def usun(cur):
+    cur.execute('DELETE FROM tbKlasy WHERE klasa = ? AND roknaboru = ?', ['3B', 2015])
+
 
 def main(args):
     con = sqlite3.connect('szkola.db')
-    cur = con.cursor() # utworzenie kurosra
+    cur = con.cursor() 
     con.row_factory = sqlite3.Row
     
-    # dodaj(cur)
+    
     aktualizuj2(cur)
-    # usun(cur)
     con.commit()
-    wyniki(cur.execute('SELECT EgzJez FROM tbUczniowie WHERE Nazwisko AND Imie'))
+
+    wyniki(cur.execute('SELECT EgzJez FROM tbUczniowie'))
     
     return 0
 
