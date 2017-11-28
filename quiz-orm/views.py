@@ -137,3 +137,9 @@ def formularz():
         flash('Imię i nazwisko: %s %s' % (imie, nazwisko), 'kom')
     dane = [imie, nazwisko, wiek]
     return render_template('formularz.html', dane=dane)
+
+
+@app.route('/todo', methods=['GET', 'POST'])
+def todo():
+    form = TodoForm()
+    return render_template('todo.html', form=form)
