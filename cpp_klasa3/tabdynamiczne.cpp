@@ -6,6 +6,8 @@
 
 
 #include <iostream>
+#include <iomanip>
+#include <cstdlib>
 
 using namespace std;
 
@@ -36,9 +38,46 @@ int tab1W() {
     return 0;
 }
 
+void wypelnij2W(int **tab, int w, int k) {
+    srand(time(NULL)); // inicjacja generatora liczb pseudolosowych
+    for(int i = 0; i < w; i++) {
+        for(int j = 0; j < k; j++) {
+            // cout << i << j << endl;
+            tab[i][j] = rand() % 101;
+            cout << setw(4) << tab[i][j];
+        }
+        cout << endl;
+    }
+}
+
+int tab2W() {
+    int w, k, i;
+    cout << "Ile wierszy i kolumn? ";
+    cin >> w >> k;
+    int **tab; // deklaracja wskaźnika do wskaźnika
+    
+    try {
+        tab = new int*[w]; // utworzenie tablicy wskaźników
+    } catch(bad_alloc) {
+        cout << "Za mało pamięci!";
+        return 1;
+    }
+    
+    for(i=0; i < w; i++) {
+        try {
+            tab[i] = new int[k]; // utworzenie tablicy licz całkowitych
+        } catch(bad_alloc) {
+            cout << "Za mało pamięci!";
+            return 1;
+        }
+    }
+    wypelnij2W(tab, w, k);
+}
+
 int main(int argc, char **argv)
 {
-	tab1W();
+    tab2W();
+	// tab1W();
 	return 0;
 }
 
