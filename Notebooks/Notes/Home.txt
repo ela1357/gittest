@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-18T12:00:05+01:00
+
+====== OBIEKTY ======
+Created czwartek 18 styczeń 2018
+
+**oop** - programowanie obiektowe
+cechy obiektu w sposów ogólny - klasa
+**Klasa** - szablon opisujący obiekt, schemat obiektu
+**Obiekt** - instancja klasa
+
+===== Klasa to nowy typ danych =====
+
+===== Konstruktor inicjuje właściwości klasy =====

@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-18T12:00:29+01:00
+
+====== Praca domowa ======
+Created czwartek 18 styczeń 2018
+
+Utwórz gre kółko i krzyzyk z komputerem
+
+Metoda skracaj w klasie "Ulamek" (algorytm nwd - euklidesa)
