@@ -5,6 +5,7 @@
 
 
 #include <iostream>
+#include "ul_ulamek.h"
 
 using namespace std;
 
