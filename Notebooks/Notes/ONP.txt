@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-30T13:38:36+01:00
+
+====== ONP ======
+Created wtorek 30 styczeń 2018
+
+==== Odwrotna notacja polska ====
+-
+
+ sposób zapisu wyrażeń arytmetycznych, w którym znak wykonywanej operacji umieszczony jest po operandach (zapis postfiksowy), a nie pomiędzy nimi jak w konwencjonalnym zapisie algebraicznym (zapis infiksowy) lub przed operandami jak w zwykłej notacji polskiej (zapis prefiksowy). Zapis ten pozwala na całkowitą rezygnację z użycia nawiasów w wyrażeniach, jako że jednoznacznie określa kolejność wykonywanych działań.
+
+Przykładowy konwencjonalny zapis:
+ (2+3)*5
+
+w ONP wygląda tak:
+ 2 3 + 5 *
+
+natomiast:
+ ((2+7)/3+(14-3)*4)/2
+
+zapisuje się następująco:
+  2 7 + 3 / 14 3 - 4 * + 2 /
+
+4 * (2 + 3) ===> 423+*
+4 * 2 + 3 ===> 42*3+
+4/(6 - 3) ===> 463-/
+((2-7)*3+(14+3)*4)/2 ===> 2 7 - 3 * 14 3 + 4 * + 2 /
