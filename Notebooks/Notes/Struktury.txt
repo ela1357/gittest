@@ -6,7 +6,7 @@ Creation-Date: 2018-01-25T12:00:39+01:00
 Created czwartek 25 styczeń 2018
 
 Podstawowe struktury:
-→ Stos - liniowo uporządkowane dane, dostepny jest ostatni element (wierzchołek stosu)
+→ **Stos** - liniowo uporządkowane dane, dostepny jest ostatni element (wierzchołek stosu)
 **L**ast
 **I**n
 **F**irst
@@ -16,8 +16,8 @@ Zapisane są w określonym porządku
 **pop()** - usuwa element bedący wierzcholkiem
 **size()** - zwraca liczbę elementów stosu
 **empty()** - zwraca true, jak stos jest pusty
-→ Lista - (struktura liniowa) uzupełnia się ją dynamicznie, słuzy do przechowywania nieznanej z góry ilości informacji tego samego typu, składa sie ona z węzłów
-→ Kolejka - (struktura liniowa) przeciwieństwo stosu
+→ **Lista** - (struktura liniowa) uzupełnia się ją dynamicznie, słuzy do przechowywania nieznanej z góry ilości informacji tego samego typu, składa sie ona z węzłów i skaźników
+→ **Kolejka** - (struktura liniowa) przeciwieństwo stosu
 Architektura **FIFO**
 **F**irst 
 **I**n
@@ -25,7 +25,7 @@ Architektura **FIFO**
 **O**ut
 Głowa kolejki - pierwszy elemeny w kolejce
 Ogon kolejki - pierwsze wolne miejsce w kolejce
-→ Drzewo (binarne) - hierarchiczna struktura danych, którego elementy nazywa sie węzłami lub wierzchołkami. W drzewie binarnym każdy węzeł posiada co najwyżej dwa nastepniki. Nastepniki te nazywamy potomkami, dziećmi lub węzłami potomnymi.
+→ **Drzewo (binarne)** - hierarchiczna struktura danych, którego elementy nazywa sie węzłami lub wierzchołkami. W drzewie binarnym każdy węzeł posiada co najwyżej dwa nastepniki. Nastepniki te nazywamy potomkami, dziećmi lub węzłami potomnymi.
 **Metoda dziel i zwyciężaj**
 Wszystkie elementy znajdujace sie w lewym poddrzewie są mniejsze od swojego ojca, natomiast elementy prawego poddrzewa sa większe od ojca.regula ta obowiązuje wszystkie poddrzewa. 
 Korzeń - pierwsza wartość, bez rodzica
