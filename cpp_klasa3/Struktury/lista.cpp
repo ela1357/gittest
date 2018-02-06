@@ -60,3 +60,7 @@ bool Lista::Usun() {
     }
     return false;
 }
+
+void Lista::Wstaw(int pozycja, int wartosc) {
+    ;
+}

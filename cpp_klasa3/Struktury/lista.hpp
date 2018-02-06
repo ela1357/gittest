@@ -15,7 +15,8 @@ class Lista {
         ~Lista (); // destruktor, sprząta po klasie // memory leaks - wycieki pamięci
         void Dodaj(int);
         void Wyswietl();
-        bool Usun();        
+        bool Usun();   
+        void Wstaw();     
 };
 
 #endif
