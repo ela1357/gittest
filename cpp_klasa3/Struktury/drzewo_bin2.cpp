@@ -7,9 +7,14 @@
 
 
 #include <iostream>
-#include "drzewo.hpp"
 
 using namespace std;
+
+struct Wezel {
+    int wartosc;
+    Wezel *lewy;
+    Wezel *prawy;
+} *korzen = NULL; // definicja struktury i utworzenie wskaźnika korzen
 
 Wezel* stworzWezel(int wartosc) {
     Wezel *nowyWezel = new Wezel;
@@ -20,7 +25,7 @@ Wezel* stworzWezel(int wartosc) {
     return nowyWezel;
 }
 
-void Drzewo::dodajWezel(Wezel *wezel, int wartosc) {
+void dodajWezel(Wezel *wezel, int wartosc) {
     if (korzen == NULL) { // drzewo jest puste
         korzen = stworzWezel(wartosc); // utworzenie 1. elementu
     } else {
@@ -41,7 +46,7 @@ void Drzewo::dodajWezel(Wezel *wezel, int wartosc) {
 }
 
 // funkcja rekurencyjnie przegląda drzewo
-void Drzewo::wyswietlRosnaco(Wezel *wezel) {
+void wyswietlRosnaco(Wezel *wezel) {
     if (wezel != NULL) { // jeżeli węzeł nie jest punty
         // rekurencyjnie wyświetl lewe poddrzewo
         wyswietlRosnaco(wezel->lewy);
@@ -50,5 +55,23 @@ void Drzewo::wyswietlRosnaco(Wezel *wezel) {
         // rekurencyjnie wyświetl prawe poddrzewo
         wyswietlRosnaco(wezel->prawy);
     }
+}
+
+int main(int argc, char **argv)
+{
+	dodajWezel(korzen, 10);
+	dodajWezel(korzen, 8);
+	dodajWezel(korzen, 4);
+	dodajWezel(korzen, 9);
+	dodajWezel(korzen, 20);
+	dodajWezel(korzen, 16);
+	dodajWezel(korzen, 30);
+    
+    cout << "Posortowane drzewo (niemalejąco): ";
+    wyswietlRosnaco(korzen);
+    
+    delete korzen; // zwolnienie wykorzystywanej pamięci
+    
+	return 0;
 }
 
