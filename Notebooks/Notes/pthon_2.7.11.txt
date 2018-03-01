@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-01T11:09:38+01:00
+
+====== pthon 2.7.11 ======
+Created czwartek 01 marzec 2018
+
+pip install virtualenv
