@@ -4,12 +4,12 @@ import random
 import numpy as np
 import matplotlib.pylab as plt
 
+
 def main(args):
     n = int(input("Ile ruchów? "))
     x = y = 0
     lx = [0]
     ly = [0]
-
 
     for i in range(n):
         rad = random.randint(0, 360) * np.pi / 180
